@@ -1,4 +1,3 @@
-var topScores = [];
 var scoreRecord = document.querySelector("#score-record");
 
 var scoreLoader = function() {
@@ -13,8 +12,13 @@ var scoreLoader = function() {
         return [];
     }
 
+    try {
     topScores = JSON.parse(topScores).sort((a, b) => parseInt(b.score) - parseInt(a.score));
     return topScores;
+} catch (error) {
+    console.error("Failed to parse top scores:", error);
+    return [];
+    }
 };
 
 var displayScores = function() {
@@ -37,6 +41,6 @@ var displayScores = function() {
     }
 };
 
-scoreLoader();
+var topScores = scoreLoader();
 displayScores();
 

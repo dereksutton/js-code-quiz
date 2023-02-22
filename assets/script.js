@@ -147,21 +147,22 @@ var quizEnd = function() {
 var scoreSaver = function(event) {
     event.preventDefault();
 
+    var topScores = [];
     var playerID = document.querySelector("input[name='player']").value;
 
-    if (playerID) {
+    if (!playerID) {
+        alert("Enter your name!");
+
+    } else {
         var playerScore = {
             name: playerID,
             score: myScore
         }
-    } else {
-        alert("Enter your name!");
-    }
 
         topScores.push(playerScore);
-        document.querySelector("#score-ranks").reset();
         localStorage.setItem("scores", JSON.stringify(topScores));
-        document.location.href = "top-score.html";
+        document.location.href = "./top-score.html";
+    }
 };
 
 var scoreLoader = function() {
