@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.4;
+    background: #def3fc;
+}
+
+a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+header {
+    width: 60%;
+    text-align: center;
+    margin: 2% auto 5% auto;
+    padding: 1em;
+    background-color: white;
+    border: 1px solid darkslategray;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .30);
+}
+
+.card {
+    width: 60%;
+    margin: auto;
+    padding: 2em;
+    background-color: white;
+    border: 1px solid darkslategray;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .30);
+}
+
+.card p {
+    margin-top: 1em;
+    font-size: 1.2em;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.5em 0.70em;
+    border: none;
+    border-radius: 5px;
+    background-color: lightcoral;
+    color: white;
+    font-weight: 700;
+    font-family: sans-serif;
+    font-size: 1.2em;
+}
+
+.btn:hover {
+    background-color: lightpink;
+}
+
+/* instructions */
+
+.start {
+    text-align: center;
+}
+
+#start-btn {
+    width: 15%;
+    margin-top: 2em;
+}
+
+/* quiz */
+
+.user-msg {
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid darkslategray;
+    font-size: 1.25em;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.quiz-header {
+    width: 60%;
+    margin-bottom: 0.5em;
+}
+
+.answer-group {
+    width: 100%;
+    display: grid;
+    margin-top: 1.2em;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-gap: 1.2em;
+}
+
+.correct-answer {
+    background-color: green;
+}
+
+.correct-answer .feedback {
+    color: green;
+}
+
+.wrong-answer {
+    background-color: red;
+}
+
+.wrong-answer .feedback {
+    background-color: red;
+}
+
+.hide {
+    display: none;
+}
+
+/* end of game */
+.end-section {
+    text-align: center;
+}
+
+.player-name {
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    padding: 1%;
+    border: 1px solid darkslategray;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-size: 1.25em;
+}
+
+#name-sub {
+    width: 60%
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+footer {
+    width: 60%;
+    margin: 5% auto 2% auto;
+    padding: 0.75em;
+    text-align: center;
+    background-color: lightcoral;
+    border: 1px solid darkslategray;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .30);
+}
+
+.scores-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.top-score a {
+    display: inline-block;
+    padding: 0.5em;
+    border-radius: 5px;
+    background-color: lightcoral;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.score-list {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+/* styles for the top scores page */
+#scoreboard h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+#scores-display {
+    width: 60%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+#score-record tr:nth-child(2n-1) {
+    background-color: lightgray;
+}
+
+#score-record td {
+    padding: 1%;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+    header {
+        width: 80%;
+        margin: 5% auto;
+        padding: 1%;
+    }
+
+    .card {
+        width: 80%;
+        margin: 2% auto;
+        padding: 1em;
+    }
+
+    .card p {
+        margin-top: 5%;
+    }
+
+    .name-input {
+        width: 60%;
+    }
+
+    #name-btn {
+        width: 60%;
+        padding: 1em;
+    }
+
+    footer {
+        width: 80%;
+    }
+
+    #scores-display {
+        width: 70%;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Code Quiz for JavaScript Students</title>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Code Quiz</h1>
+    </header>
+    <main class="card" id="main-card">
+        <section class="directions" id="directions">
+            <h2>Instructions</h2>
+            <p>
+                Test your JavaScript knowledge! This is a timed multiple choice quiz. 
+                Each incorrect answer will deduct 6 seconds from your time. Your final score is based on the amount of time remaining - the higher, the better. 
+                Try to beat your high score!
+            </p>
+            <p>
+                Press <strong>START</strong> to begin the quiz!
+            </p>
+            <div class="start">
+                <button class="btn" id="start-btn">START</button>
+            </div>
+        </section>
+        <div class="user-msg hide"></div>
+        <section class="quiz-section hide">
+            <h2 class="quiz-header"></h2>
+            <div class="question"></div>
+            <div class="answer-group">
+                <div class="answer-item">
+                    <button class="btn" id="a-btn" value="a"></button>
+                </div>
+                <div class="answer-item">
+                    <button class="btn" id="b-btn" value="b"></button>
+                </div>
+                <div class="answer-item">
+                    <button class="btn" id="c-btn" value="c"></button>
+                </div>
+                <div class="answer-item">
+                    <button class="btn" id="d-btn" value="d"></button>
+                </div>
+            </div>
+        </section>
+        <section class="end-section"></section>
+    </main>
+    <footer>
+        <div class="scores-display">
+            <div class="top-score">
+                <a href="top-score.html">View High Scores</a>
+            </div>
+            <div class="score-list"></div>
+        </div>
+    </footer>
+    <script src="./assets/script.js"></script>
+</body>
+</html>
