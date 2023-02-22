@@ -141,7 +141,7 @@ var quizEnd = function() {
     submitName.textContent = "SUBMIT";
     scoreRanks.appendChild(submitName);
 
-    submitName.addEventListener("click", scoreKeeper);
+    submitName.addEventListener("click", scoreSaver);
 };
 
 var scoreSaver = function(event) {
