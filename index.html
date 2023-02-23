@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Code Quiz for JavaScript Students</title>
 </head>
+
 <body>
     <header>
         <h1>JavaScript Code Quiz</h1>
@@ -15,8 +17,9 @@
         <section class="directions" id="directions">
             <h2>Instructions</h2>
             <p>
-                Test your JavaScript knowledge! This is a timed multiple choice quiz. 
-                Each incorrect answer will deduct 6 seconds from your time. Your final score is based on the amount of time remaining - the higher, the better. 
+                Test your JavaScript knowledge! This is a timed multiple choice quiz.
+                Each incorrect answer will deduct 6 seconds from your time. Your final score is based on the amount of
+                time remaining - the higher, the better.
                 Try to beat your high score!
             </p>
             <p>
@@ -26,6 +29,8 @@
                 <button class="btn" id="start-btn">START</button>
             </div>
         </section>
+
+        <!-- quiz section, hidden until user clicks `start` button -->
         <div class="user-msg hide"></div>
         <section class="quiz-section hide">
             <h2 class="quiz-header"></h2>
@@ -47,6 +52,8 @@
         </section>
         <section class="end-section"></section>
     </main>
+
+    <!-- footer contains link to view the top score leaderboard -->
     <footer>
         <div class="scores-display">
             <div class="top-score">
@@ -57,4 +64,5 @@
     </footer>
     <script src="./assets/script.js"></script>
 </body>
+
 </html>

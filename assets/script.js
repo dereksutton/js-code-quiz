@@ -1,3 +1,4 @@
+// array of question objects to display to the user when quiz is initiated
 var jsQuiz = [
     {
         question: 'Which of the following is NOT a data type in JavaScript?',
@@ -41,6 +42,7 @@ var jsQuiz = [
     }
 ];
 
+// setting global variables and selecting elements from the DOM for later manipulation
 var bodyColor = document.querySelector("body");
 var startBtn = document.querySelector("#start-btn");
 var quizSection = document.querySelector(".quiz-section");
@@ -51,7 +53,7 @@ var myScore = 100;
 var topScores = [];
 
 // initiates the quiz
-var quizStart = function() {
+var quizStart = function () {
     document.querySelector("#directions").remove();
     quizSection.classList.remove("hide");
 
@@ -59,8 +61,8 @@ var quizStart = function() {
     scoreKeeper();
 };
 
-// switches questions and checks user answers
-var questionNext = function(index) {
+// displays/switches questions and answer sets - uses event listener which is used to the answerChecker function to check user answers
+var questionNext = function (index) {
     var quizHeader = document.querySelector(".quiz-header");
     var question = document.querySelector(".question");
     var aBtn = document.getElementById("a-btn");
@@ -81,7 +83,8 @@ var questionNext = function(index) {
     dBtn.addEventListener("click", answerChecker);
 };
 
-var answerChecker = function(event) {
+// compares the user against the correct answer and sets conditions for each event scenario, then fires the `scoreKeeper` function to track score accordingly.
+var answerChecker = function (event) {
     var userAnswer = event.target.value;
 
     if (userAnswer === jsQuiz[questionTally].answer) {
@@ -104,11 +107,11 @@ var answerChecker = function(event) {
     scoreKeeper();
 };
 
-// keeps the score
-var scoreKeeper = function() {
+// keeps track of the score for the duration of the quiz
+var scoreKeeper = function () {
     scoreList.textContent = "Your current score is: 100"
 
-    var scoreCalc = setInterval(function() {
+    var scoreCalc = setInterval(function () {
         if (myScore > 0 && questionTally < jsQuiz.length) {
             scoreList.textContent = "Your current score is: " + myScore;
             myScore--;
@@ -119,7 +122,8 @@ var scoreKeeper = function() {
     }, 1000);
 };
 
-var quizEnd = function() {
+// once user reaches end of quiz, section is removed and new HTML elements dynamically generated based on user input. also sets an event listener on the `submit` button to fire the 'scoreSaver' function which saves user input to localStorage 
+var quizEnd = function () {
     quizSection.remove();
 
     endSection.innerHTML = "<h2>Thanks for playing -- Keep coding!</h2><p>Final score: " + myScore + ". Enter your name to see score rankings.</p>";
@@ -144,7 +148,8 @@ var quizEnd = function() {
     submitName.addEventListener("click", scoreSaver);
 };
 
-var scoreSaver = function(event) {
+// this function saves the player's score to localStorage and displays the score leaderboard
+var scoreSaver = function (event) {
     event.preventDefault();
 
     var topScores = [];
@@ -165,15 +170,18 @@ var scoreSaver = function(event) {
     }
 };
 
-var scoreLoader = function() {
+// retrieves the saved user scores and parses the returned JSON data to be displayed in our application
+var scoreLoader = function () {
     topScores = localStorage.getItem("scores");
 
     if (!topScores) {
         return false;
     } else {
-        return JSON.parse(topScores);}
+        return JSON.parse(topScores);
+    }
 };
 
 scoreLoader();
 
+// event listener attached to the `start` button that fires the quizStart function to begin the quiz when clicked.
 startBtn.addEventListener("click", quizStart);
